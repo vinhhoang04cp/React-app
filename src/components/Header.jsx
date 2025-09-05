@@ -1,68 +1,121 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import '../styles/Header.css';
 
 /**
- * Component Header:
- * - Hiển thị topbar, navbar và menu mobile.
- * - Quản lý state mở/đóng menu mobile (isMenuOpen).
- * - Đóng menu khi:
- *   + Resize lên desktop (>= 992px).
- *   + Click ra ngoài vùng menu/toggle.
+ * Component Header - Thành phần đầu trang chính của ứng dụng
+ * 
+ * Chức năng chính:
+ * - Hiển thị topbar, navbar và menu mobile
+ * - Quản lý trạng thái đóng/mở của menu mobile
+ * - Xử lý responsive: tự động đóng menu khi chuyển sang desktop
+ * - Xử lý UX: đóng menu khi click ra ngoài vùng menu
+ * 
+ * Hooks được sử dụng:
+ * - useState: Quản lý trạng thái menu mobile
+ * - useRef: Lưu tham chiếu đến các phần tử DOM để tối ưu performance
+ * - useCallback: Tối ưu các hàm xử lý sự kiện, tránh tạo mới không cần thiết
+ * - useEffect: Quản lý event listeners và cleanup
  */
 const Header = () => {
-  // State điều khiển hiển thị menu mobile (true = mở, false = đóng)
+  /**
+   * State quản lý trạng thái menu mobile
+   * @type {[boolean, function]} useState hook
+   * - true: menu đang mở
+   * - false: menu đang đóng
+   * - setIsMenuOpen: hàm để cập nhật trạng thái
+   */
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  /**
+   * Refs lưu tham chiếu đến các phần tử DOM
+   * - Sử dụng useRef thay vì getElementById để tối ưu performance
+   * - Giá trị của ref được giữ nguyên qua các lần render
+   * - Thay đổi ref.current không gây ra re-render
+   */
+  const mobileMenuRef = useRef(null);      // Tham chiếu đến phần tử menu mobile
+  const mobileMenuToggleRef = useRef(null); // Tham chiếu đến nút toggle menu
 
   /**
-   * useEffect thiết lập/cleanup các event listener:
-   * - 'resize': nếu lên màn hình >= 992px và menu đang mở -> tự đóng (tránh trùng lặp với menu desktop).
-   * - 'click' toàn document: nếu đang mở menu mà click ra ngoài menu/toggle -> đóng menu.
-   *
-   * Dependency [isMenuOpen]:
-   * - Mỗi lần isMenuOpen thay đổi, effect sẽ re-run để đảm bảo handler "nhìn thấy" state mới nhất.
+   * Xử lý sự kiện thay đổi kích thước màn hình
+   * - Được bọc trong useCallback để tránh tạo hàm mới mỗi lần render
+   * - Chỉ tạo lại khi isMenuOpen thay đổi
+   * 
+   * Logic:
+   * - Kiểm tra nếu màn hình >= 992px (desktop) và menu đang mở
+   * - Tự động đóng menu để tránh xung đột với menu desktop
+   */
+  const handleResize = useCallback(() => {
+    if (window.innerWidth >= 992 && isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  }, [isMenuOpen]);
+
+  /**
+   * Xử lý sự kiện click ra ngoài menu mobile
+   * @param {Event} event - DOM event object
+   * 
+   * Logic kiểm tra:
+   * 1. Menu đang mở (isMenuOpen === true)
+   * 2. Đã có tham chiếu đến cả menu và nút toggle
+   * 3. Click không nằm trong vùng của menu hoặc nút toggle
+   * 
+   * Nếu thỏa mãn tất cả => đóng menu
+   */
+  const handleClickOutside = useCallback((event) => {
+    const mobileMenu = mobileMenuRef.current;
+    const mobileMenuToggle = mobileMenuToggleRef.current;
+    
+    const shouldCloseMenu = isMenuOpen && 
+      mobileMenu && 
+      mobileMenuToggle && 
+      !mobileMenu.contains(event.target) && 
+      !mobileMenuToggle.contains(event.target);
+
+    if (shouldCloseMenu) {
+      setIsMenuOpen(false);
+    }
+  }, [isMenuOpen]);
+
+  /**
+   * Effect Hook để quản lý event listeners
+   * 
+   * Chức năng:
+   * 1. Thiết lập các event listeners khi component mount:
+   *    - 'click' trên document: để phát hiện click ngoài menu
+   *    - 'resize' trên window: để phát hiện thay đổi kích thước màn hình
+   * 
+   * 2. Cleanup khi component unmount:
+   *    - Gỡ bỏ tất cả event listeners để tránh memory leak
+   * 
+   * Dependencies: [handleClickOutside, handleResize]
+   * - Effect chỉ chạy lại khi một trong hai handler thay đổi
+   * - Handlers được bọc trong useCallback nên chỉ thay đổi khi isMenuOpen thay đổi
    */
   useEffect(() => {
-    // Handler khi thay đổi kích thước cửa sổ
-    const handleResize = () => {
-      // Ngưỡng 992px thường tương ứng breakpoint lg của Bootstrap
-      if (window.innerWidth >= 992 && isMenuOpen) {
-        setIsMenuOpen(false); // lên desktop thì đóng menu mobile
-      }
-    };
-
-    // Handler phát hiện click ngoài menu/toggle để đóng menu
-    const handleClickOutside = (event) => {
-      // Lấy phần tử menu và nút toggle theo id đã gán trong JSX
-      const mobileMenu = document.getElementById('mobileMenu');
-      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-      
-      // Điều kiện: menu đang mở + đã có 2 phần tử + click không nằm trong 2 vùng đó
-      if (
-        isMenuOpen && 
-        mobileMenu &&
-        mobileMenuToggle &&
-        !mobileMenu.contains(event.target) && 
-        !mobileMenuToggle.contains(event.target)
-      ) {
-        setIsMenuOpen(false); // đóng menu khi click ngoài
-      }
-    };
-
-    // Gắn listener toàn cục
+    // Thiết lập event listeners
     document.addEventListener('click', handleClickOutside);
     window.addEventListener('resize', handleResize);
 
-    // Cleanup để tránh leak/bị gắn nhiều lần
+    // Cleanup function
     return () => {
       document.removeEventListener('click', handleClickOutside);
       window.removeEventListener('resize', handleResize);
     };
-  }, [isMenuOpen]);
+  }, [handleClickOutside, handleResize]);
 
   /**
-   * Toggle mở/đóng menu mobile khi bấm nút hamburger (hoặc icon X).
-   * - e.stopPropagation(): chặn sự kiện click "bong bóng" lên document,
-   *   tránh bị handler "click outside" hiểu nhầm là click ngoài và đóng ngay lập tức.
+   * Hàm xử lý việc đóng/mở menu mobile
+   * @param {Event} e - DOM event object từ sự kiện click
+   * 
+   * Chức năng:
+   * 1. Ngăn chặn event bubbling:
+   *    - Sử dụng e.stopPropagation() để ngăn sự kiện click lan lên document
+   *    - Nếu không có bước này, handleClickOutside sẽ được gọi ngay lập tức
+   *    - Điều này sẽ khiến menu bị đóng ngay khi vừa mở
+   * 
+   * 2. Toggle trạng thái menu:
+   *    - Đảo ngược giá trị hiện tại của isMenuOpen
+   *    - true -> false (đóng menu) hoặc false -> true (mở menu)
    */
   const toggleMenu = (e) => {
     e.stopPropagation();
@@ -71,19 +124,36 @@ const Header = () => {
 
   return (
     // sticky-top: dính trên đầu khi scroll; bg-white: nền trắng
-    <header className="acb-header sticky-top bg-white">
+    <header className="acb-header bg-white">
       {/* 
         Khối menu mobile overlay (hiện/ẩn bằng class 'active' theo state isMenuOpen).
         id="mobileMenu" để handler ngoài useEffect có thể tham chiếu.
       */}
-      <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`} id="mobileMenu">
+      {/* 
+        Mobile Menu Container
+        - className động dựa trên trạng thái isMenuOpen
+        - Thêm class 'active' khi menu đang mở
+        - ref={mobileMenuRef} để có thể truy cập DOM element này trong handleClickOutside
+      */}
+      <div 
+        className={`mobile-menu ${isMenuOpen ? 'active' : ''}`} 
+        ref={mobileMenuRef}
+      >
+        {/* 
+          Navigation Links Container
+          - Chứa tất cả các liên kết điều hướng cho mobile
+          - Được style qua mobile-menu-links class trong CSS
+        */}
         <nav className="mobile-menu-links">
-          {/* Các liên kết điều hướng trên mobile */}
+          {/* Nhóm liên kết chính */}
           <a href="/e-bank">Ngân hàng số</a>
           <a href="/">Cá nhân</a>
           <a href="/">Doanh nghiệp</a>
           <a href="/premium">Ngân hàng Ưu tiên</a>
-          <hr />
+          
+          <hr /> {/* Phân cách giữa các nhóm liên kết */}
+          
+          {/* Nhóm liên kết phụ */}
           <a href="/about">Về chúng tôi</a>
           <a href="/investors">Nhà đầu tư</a>
           <a href="#">Tuyển dụng</a>
