@@ -13,7 +13,7 @@
  */
 
 import { useEffect, useRef, useState } from 'react';
-import '../styles/Header.css';
+import '../styles/common/Header.css';
 
 const Header = () => {
   /**

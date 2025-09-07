@@ -1,6 +1,6 @@
 // Footer.jsx
 import React from "react";
-import "../styles/Footer.css";
+import '../styles/common/Footer.css';
 // Cách 1 (khuyên dùng): thêm link Bootstrap Icons vào <head> của index.html
 // Cách 2: hoặc import trực tiếp:
 // import "bootstrap-icons/font/bootstrap-icons.css";
