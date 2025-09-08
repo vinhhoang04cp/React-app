@@ -13,6 +13,7 @@
  */
 
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/common/Header.css';
 
 const Header = () => {
@@ -110,13 +111,13 @@ const Header = () => {
           <hr />
 
           {/* Nhóm liên kết phụ cho mobile */}
-          <a href="/about">Về chúng tôi</a>
-          <a href="/investors">Nhà đầu tư</a>
-          <a href="#">Tuyển dụng</a>
-          <a href="/reward">ACB Rewards</a>
-          <a href="/library">Thư viện</a>
-          <a href="/security">An toàn</a>
-          <a href="/liquidation">Thanh lý tài sản</a>
+          <Link to="/about">Về chúng tôi</Link>
+          <Link to="/investors">Nhà đầu tư</Link>
+          <Link to="#">Tuyển dụng</Link>
+          <Link to="/reward">ACB Rewards</Link>
+          <Link to="/library">Thư viện</Link>
+          <Link to="/security">An toàn</Link>
+          <Link to="/liquidation">Thanh lý tài sản</Link>
         </nav>
       </div>
 
@@ -131,13 +132,13 @@ const Header = () => {
         <div className="wrap topbar-row">
           {/* Liên kết phụ (chỉ desktop) */}
           <nav className="top-links d-none d-lg-flex">
-            <a href="/about">Về chúng tôi</a>
-            <a href="/investors">Nhà đầu tư</a>
-            <a href="#">Tuyển dụng</a>
-            <a href="/reward">ACB Rewards</a>
-            <a href="/library">Thư viện</a>
-            <a href="/security">An toàn</a>
-            <a href="/liquidation">Thanh lý tài sản</a>
+            <Link to="/about">Về chúng tôi</Link>
+            <Link to="/investors">Nhà đầu tư</Link>
+            <Link to="#">Tuyển dụng</Link>
+            <Link to="/reward">ACB Rewards</Link>
+            <Link to="/library">Thư viện</Link>
+            <Link to="/security">An toàn</Link>
+            <Link to="/liquidation">Thanh lý tài sản</Link>
           </nav>
 
           {/* Nhóm hành động bên phải topbar */}
