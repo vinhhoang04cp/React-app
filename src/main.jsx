@@ -9,6 +9,7 @@ import Reward from './Reward.jsx'
 import Library from './Library.jsx'
 import Security from './Security.jsx'
 import Liquidation from './Liquidation.jsx'
+import Ebank from './Ebank.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -21,6 +22,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/library" element={<Library />} />
         <Route path="/security" element={<Security />} />
         <Route path="/liquidation" element={<Liquidation />} />
+        <Route path="/e-bank" element={<Ebank />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
