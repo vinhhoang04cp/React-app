@@ -2,12 +2,13 @@ import React from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import './styles/Subpage/Library.css'; 
-
+import Carousel from '../src/components/Homepage/Carousel'
 
 function Library() {
   return (
     <>
     <Header />
+    <Carousel />
     <main>
       {/* Breadcrumb + title */}
       <div className="library-hero"> {/* TUỲ CHỈNH: nền/spacing của hero thư viện */}

@@ -20,20 +20,18 @@
    CSS VARIABLES - Biến màu sắc và thiết kế
    ======================================== */
 :root {
-  /* ========================================
-     MÀU SẮC CHÍNH - Brand colors của ACB
-     ======================================== */
-  --primary-color: #004f9f;      /* Xanh ACB chính */
-  --primary-dark: #003d7a;       /* Xanh ACB đậm */
-  --primary-light: #3378b5;      /* Xanh ACB nhạt */
-  --secondary-color: #ff6b00;    /* Cam accent */
-  --secondary-dark: #cc5500;     /* Cam đậm */
-  --secondary-light: #ff8533;    /* Cam nhạt */
-  --success-color: #28a745;      /* Xanh lá - thành công */
-  --warning-color: #ffc107;      /* Vàng - cảnh báo */
-  --danger-color: #dc3545;       /* Đỏ - lỗi */
-  --light-color: #f8f9fa;        /* Xám nhạt - background */
-  --dark-color: #343a40;         /* Xám đậm - text */
+  /* Brand colors - ACB */
+  --primary: #004f9f;
+  --primary-dark: #003d7a;
+  --primary-light: #3378b5;
+  --secondary: #ff6b00;
+  --secondary-dark: #cc5500;
+  --secondary-light: #ff8533;
+  --success: #28a745;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
   
   /* ========================================
      THANG MÀU XÁM - Gray scale

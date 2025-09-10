@@ -3,13 +3,12 @@
 
 @font-face {
   font-family: "bootstrap-icons";
-  src: url("../../node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2") format("woff2"),
-       url("../../node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff") format("woff");
+  src: url("../../node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2") format("woff2");
+  font-display: swap;
 }
 
 :root {
   --acb-bg: #fff;
-  --acb-bg-2: #fff;
   --acb-text: #475467;
   --acb-text-strong: #101828;
   --acb-text-dim: #667085;
@@ -24,18 +23,16 @@
 
 .acb-header.sticky-top {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  inset: 0 0 auto;
   z-index: 1000;
   background: var(--acb-bg);
-  box-shadow: 0 1px 0 rgb(0 0 0 / 4%), 0 10px 30px rgb(0 0 0 / 8%);
+  box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 10px 30px rgba(0,0,0,.08);
 }
 
 .wrap {
   max-width: var(--wrap-max);
-  margin: 0 auto;
-  padding: 0 20px;
+  margin-inline: auto;
+  padding-inline: 20px;
 }
 
 /* Topbar */
@@ -51,19 +48,24 @@
   justify-content: space-between;
 }
 
-.top-links a {
+.top-links a,
+.top-actions a {
   font-size: 14px;
   color: var(--acb-text);
   text-decoration: none;
+  transition: color .15s;
+}
+
+.top-links a {
   margin-right: 24px;
-  transition: color 0.15s ease;
 }
 
 .top-links a:last-child {
   margin-right: 0;
 }
 
-.top-links a:hover {
+.top-links a:hover,
+.top-actions a:hover {
   color: var(--acb-text-strong);
 }
 
@@ -76,14 +78,6 @@
 .top-actions a {
   display: inline-flex;
   align-items: center;
-  font-size: 14px;
-  color: var(--acb-text);
-  text-decoration: none;
-  transition: color 0.15s ease;
-}
-
-.top-actions a:hover {
-  color: var(--acb-text-strong);
 }
 
 .icon-btn {

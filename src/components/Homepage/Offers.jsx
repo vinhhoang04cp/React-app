@@ -1,22 +1,10 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import '../../styles/Homepage/Offers.css';
-
-// JSX chuyển từ đoạn HTML gốc, giữ nguyên chức năng & hiển thị.
-// Lưu ý:
-// - Nếu trang đã có Bootstrap/CSS/JS tương ứng thì có thể bỏ các thẻ trong <Helmet>.
-// - Class -> className, img tự đóng, comment dạng {/* ... */} theo chuẩn JSX.
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function FeaturedDeals() {
   return (
-    <>
-      <Helmet>
-        {/* CSS riêng của section (giữ nguyên như bản gốc) */}
-        <link rel="stylesheet" href="css/homepage/offers.css" />
-        {/* Bootstrap JS (nếu trang đã có thì bỏ) */}
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" />
-      </Helmet>
-
+      <>
       <section className="featured-deals py-5 bg-white">
         <div className="offers-wrap">
           {/* Heading */}

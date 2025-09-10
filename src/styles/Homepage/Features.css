@@ -1,97 +1,80 @@
-/* Feature section layout */
 .features-section {
-    padding: var(--spacing-xl) 0;
-    background-color: var(--gray-100);
+    --card-expand: var(--s-xl, 48px);
+    padding-block: var(--s-xl);
+    background: var(--gray-100);
 }
 
 .features-section .container {
     width: 100%;
     margin-inline: auto;
-    padding: var(--spacing-lg);
+    padding: var(--s-lg);
 }
 
 @media (min-width: 992px) {
-    .features-section .container {
-        max-width: none;
-        width: 60%;
-    }
-}
-
-/* Feature cards layout */
-:root { 
-    --card-expand: var(--spacing-xl); 
-}
-
-@media (min-width: 992px) {
-    .features-section .feature-card {
-        margin-inline: calc(var(--card-expand) * -1);
+    .features-section {
+        .container {
+            width: 60%;
+            max-width: none;
+        }
+        .feature-card {
+            margin-inline: calc(var(--card-expand) * -1);
+        }
     }
 }
   /* Nếu muốn heading cũng rộng thêm như card, bỏ comment dòng dưới */
   /* @media (min-width: 992px){ .features-section .text-center{ margin-inline: calc(var(--card-expand) * -1); } } */
 
-/* Feature cards styling */
 .feature-card { 
-    min-height: 360px;
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius-xl);
-    transition: all var(--transition-normal);
+    --card-height: 360px;
+    min-height: var(--card-height);
+    padding: var(--s-xl);
+    border-radius: var(--r-xl);
+    transition: transform .3s, box-shadow .3s;
     overflow: hidden;
     box-shadow: var(--shadow-md);
-}
 
-.feature-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+    }
 }
 
 .feature-img {  
-    max-height: 360px; 
+    max-height: var(--card-height);
     object-fit: cover; 
-    border-radius: var(--border-radius-lg);
-    transition: all var(--transition-normal);
+    border-radius: var(--r-lg);
+    transition: transform .3s;
 }
 
 @media (min-width: 992px) {
     .feature-card { 
-        min-height: 400px;
-        padding: var(--spacing-xl) var(--spacing-xl);
-    }
-    .feature-img {  
-        max-height: 400px;
+        --card-height: 400px;
     }
 }
 
 /* Gradients */
+.gradient {
+    background: linear-gradient(135deg, var(--start-color), var(--end-color) var(--end-stop, 70%));
+}
+
 .gradient-soft {   
-    background: linear-gradient(135deg, 
-        var(--primary-color-light) 0%, 
-        white 60%
-    ); 
+    --start-color: var(--primary-light);
+    --end-color: white;
+    --end-stop: 60%;
 }
 
 .gradient-blue {   
-    background: linear-gradient(135deg, 
-        var(--primary-color) 0%, 
-        var(--secondary-color) 70%
-    ); 
+    --start-color: var(--primary);
+    --end-color: var(--secondary);
 }
 
 .gradient-cyan {   
-    background: linear-gradient(135deg, 
-        var(--primary-color-light) 0%, 
-        var(--secondary-color-light) 70%
-    ); 
+    --start-color: var(--primary-light);
+    --end-color: var(--secondary-light);
 }
 
 .gradient-soft-2 { 
-    background: linear-gradient(135deg, 
-        var(--gray-100) 0%, 
-        white 60%
-    ); 
-}
-
-/* Custom border radius */
-.rounded-4 { 
-    border-radius: var(--border-radius-xl) !important; 
+    --start-color: var(--gray-100);
+    --end-color: white;
+    --end-stop: 60%;
 }

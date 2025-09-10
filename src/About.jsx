@@ -11,7 +11,7 @@ function About() {
       {/* TUỲ CHỈNH: khối hero; không phải class của Bootstrap */}
 
       <img
-        src="./img/anh2k.jpg"
+        src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg"
         alt="Ngân hàng số"
         className="hero2__img"
         loading="lazy"
@@ -60,7 +60,7 @@ function About() {
           <div className="rounded-4 shadow-sm overflow-hidden mb-3">
             {/* rounded-4: bo góc lớn (~1rem); shadow-sm: bóng nhẹ; overflow-hidden: cắt phần ảnh tràn để bo góc "ăn" vào ảnh */}
             <img
-              src="./img/anh2k.jpg"
+              src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg"
               alt="Ảnh minh hoạ ngân hàng"
               className="d-block"
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
@@ -124,7 +124,7 @@ function About() {
                   Phát triển bền vững với tinh thần chuyển đổi để nâng cao khả năng cạnh tranh.
                 </p>
                 <img
-                  src="./img/download (2).jpg"
+                  src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg"
                   className="tile-img"
                   alt="Tầm nhìn"
                   loading="lazy"
@@ -143,7 +143,7 @@ function About() {
                   và đạt tỷ suất lợi nhuận trên vốn chủ sở hữu (ROE) từ 20%/năm trở lên.
                 </p>
                 <img
-                  src="./img/download (2).jpg"
+                  src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg"
                   className="tile-img"
                   alt="Sứ mệnh"
                   loading="lazy"
@@ -249,7 +249,7 @@ function About() {
             <div className="col-12 col-lg-6">
               {/* 1 cột đầy trên mobile; 1/2 chiều ngang từ lg trở lên */}
               <img
-                src="./img/anh2k.jpg"
+                src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg"
                 className="img-fluid rounded-4 shadow-sm"
                 alt="Sơ đồ quản trị"
                 loading="lazy"
@@ -290,7 +290,7 @@ function About() {
                 <h3 className="h6 fw-bold mb-2">
                   Enterprise Asia – ACB – Doanh nghiệp có thương hiệu truyền cảm hứng tốt nhất 2022
                 </h3>
-                <img src="./img/anh2k.jpg" alt="Giải thưởng 1" className="award-figure" loading="lazy" />
+                <img src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg" alt="Giải thưởng 1" className="award-figure" loading="lazy" />
                 {/* TUỲ CHỈNH: kiểm soát tỉ lệ khung hình, bo góc... */}
               </article>
             </div>
@@ -301,7 +301,7 @@ function About() {
                 <h3 className="h6 fw-bold mb-2">
                   International Banker (UK) – Ngân hàng có dịch vụ khách hàng tốt nhất Châu Á 2022
                 </h3>
-                <img src="./img/anh2k.jpg" alt="Giải thưởng 2" className="award-figure" loading="lazy" />
+                <img src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg" alt="Giải thưởng 2" className="award-figure" loading="lazy" />
               </article>
             </div>
 
@@ -311,7 +311,7 @@ function About() {
                 <h3 className="h6 fw-bold mb-2">
                   Global Banking &amp; Finance Review – Ngân hàng có trách nhiệm xã hội tốt nhất Việt Nam 2022
                 </h3>
-                <img src="./img/anh2k.jpg" alt="Giải thưởng 3" className="award-figure" loading="lazy" />
+                <img src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg" alt="Giải thưởng 3" className="award-figure" loading="lazy" />
               </article>
             </div>
           </div>
@@ -394,7 +394,7 @@ function About() {
               <article className="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
                 {/* .card có position: relative; cần thiết cho .stretched-link */}
                 <img
-                  src="./img/anh2k.jpg"
+                  src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg"
                   className="card-img-top"
                   alt="Nâng cấp hạ tầng thanh toán"
                   loading="lazy"
@@ -418,7 +418,7 @@ function About() {
             <div className="col-12 col-md-6 col-lg-4">
               <article className="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
                 <img
-                  src="./img/anh2k.jpg"
+                  src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg"
                   className="card-img-top"
                   alt="KQKD tăng trưởng"
                   loading="lazy"
@@ -438,7 +438,7 @@ function About() {
             <div className="col-12 col-md-6 col-lg-4">
               <article className="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
                 <img
-                  src="./img/anh2k.jpg"
+                  src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg"
                   className="card-img-top"
                   alt="Ra mắt thẻ hội viên"
                   loading="lazy"

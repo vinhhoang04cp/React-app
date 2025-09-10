@@ -2,11 +2,13 @@ import React from "react";
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import '../src/styles/Subpage/Liquidation.css';
+import Carousel from '../src/components/Homepage/Carousel' 
 
 function Liquidation() {
   return (
     <>
     <Header />
+    <Carousel />
     <main>
       <section className="assets-section container">
         {/* container: căn giữa + max-width; assets-section: LỚP TUỲ CHỈNH (không thuộc Bootstrap) */}
@@ -26,7 +28,7 @@ function Liquidation() {
             {/* 100% chiều ngang dưới lg; từ ≥992px thì 6/12 (nửa trang) */}
             <article className="asset-card">
               {/* asset-card: THẺ TUỲ CHỈNH (không phải .card của Bootstrap) */}
-              <img className="bg" alt="Bất động sản" src="./img/anh2k.jpg" />
+              <img className="bg" alt="Bất động sản" src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg" />
               {/* .bg: TUỲ CHỈNH để đặt ảnh nền/phủ */}
               <div className="asset-content">
                 {/* vùng nội dung overlay TUỲ CHỈNH */}
@@ -51,7 +53,7 @@ function Liquidation() {
           <div className="col-12 col-lg-6">
             <article className="asset-card grid-lines">
               {/* grid-lines: TUỲ CHỈNH (ví dụ vẽ các đường kẻ nền) */}
-              <img className="bg" alt="Động sản" src="./img/anh2k.jpg" />
+              <img className="bg" alt="Động sản" src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg" />
               <div className="asset-content">
                 <h2 className="asset-title h3 text-primary mb-4">Động sản</h2>
                 <a

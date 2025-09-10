@@ -82,7 +82,7 @@ body {
 
 .hero-img {
   min-height: var(--hero-height-desktop);
-  background: url('/img/anh2k.jpg') center/cover no-repeat;
+  background: url('https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg') center/cover no-repeat;
   transition: var(--transition-smooth);
 }
 

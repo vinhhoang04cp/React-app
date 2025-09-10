@@ -5,11 +5,13 @@ import React from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import '../src/styles/Subpage/Investors.css' // CSS tuỳ chỉnh cho trang Nhà đầu tư
+import Carousel from '../src/components/Homepage/Carousel'
 
 function Investors() {
   return (
     <>
     <Header />
+    <Carousel />
     <main>
       {/* Breadcrumb */}
       <div className="bg-body-tertiary py-2">
@@ -70,7 +72,7 @@ function Investors() {
                 <div className="row g-4 row-cols-1 row-cols-lg-3"> {/* row-cols-1: tự chia 1 cột/row dưới lg; row-cols-lg-3: 3 cột/row từ ≥992px; g-4: gutter 1.5rem */}
                   <div className="col"> {/* col: cột tự mở rộng đều trong cơ chế row-cols */}
                     <div className="report-tile h-100"> {/* report-tile: TUỲ CHỈNH; h-100: cao 100% để các thẻ bằng chiều cao */}
-                      <img className="cover" src="./img/anh2k.jpg" alt="Khung Tài chính bền vững" /> {/* cover: TUỲ CHỈNH (thường object-fit:cover) */}
+                      <img className="cover" src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg" alt="Khung Tài chính bền vững" /> {/* cover: TUỲ CHỈNH (thường object-fit:cover) */}
                       <div className="meta"> {/* TUỲ CHỈNH: vùng mô tả */}
                         <div className="title">Khung Tài chính bền vững</div>
                         <a className="cta link-primary" href="#">Xem chi tiết <i className="bi bi-chevron-right"></i></a> {/* link-primary: màu link theo --bs-primary */}
@@ -79,7 +81,7 @@ function Investors() {
                   </div>
                   <div className="col">
                     <div className="report-tile h-100">
-                      <img className="cover" src="./img/anh2k.jpg" alt="Báo cáo phát triển bền vững" />
+                      <img className="cover" src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg" alt="Báo cáo phát triển bền vững" />
                       <div className="meta">
                         <div className="title">Báo cáo phát triển bền vững</div>
                         <a className="cta link-primary" href="#">Xem chi tiết <i className="bi bi-chevron-right"></i></a>
@@ -88,7 +90,7 @@ function Investors() {
                   </div>
                   <div className="col">
                     <div className="report-tile h-100">
-                      <img className="cover" src="./img/anh2k.jpg" alt="Báo cáo quản trị" />
+                      <img className="cover" src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg" alt="Báo cáo quản trị" />
                       <div className="meta">
                         <div className="title">Báo cáo quản trị</div>
                         <a className="cta link-primary" href="#">Xem chi tiết <i className="bi bi-chevron-right"></i></a>
@@ -102,7 +104,7 @@ function Investors() {
                 <div className="row g-4 row-cols-1 row-cols-lg-3"> {/* bố cục tương tự slide 1 */}
                   <div className="col">
                     <div className="report-tile h-100">
-                      <img className="cover" src="./img/anh2k.jpg" alt="Báo cáo thường niên" />
+                      <img className="cover" src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg" alt="Báo cáo thường niên" />
                       <div className="meta">
                         <div className="title">Báo cáo thường niên</div>
                         <a className="cta link-primary" href="#">Xem chi tiết <i className="bi bi-chevron-right"></i></a>
@@ -111,7 +113,7 @@ function Investors() {
                   </div>
                   <div className="col">
                     <div className="report-tile h-100">
-                      <img className="cover" src="./img/anh2k.jpg" alt="Báo cáo tài chính" />
+                      <img className="cover" src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg" alt="Báo cáo tài chính" />
                       <div className="meta">
                         <div className="title">Báo cáo tài chính</div>
                         <a className="cta link-primary" href="#">Xem chi tiết <i className="bi bi-chevron-right"></i></a>
@@ -120,7 +122,7 @@ function Investors() {
                   </div>
                   <div className="col">
                     <div className="report-tile h-100">
-                      <img className="cover" src="./img/anh2k.jpg" alt="Tài liệu khác" />
+                      <img className="cover" src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg" alt="Tài liệu khác" />
                       <div className="meta">
                         <div className="title">Tài liệu khác</div>
                         <a className="cta link-primary" href="#">Xem chi tiết <i className="bi bi-chevron-right"></i></a>

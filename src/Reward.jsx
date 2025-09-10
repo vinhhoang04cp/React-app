@@ -2,12 +2,13 @@ import React from "react";
 import Header from './components/Header'
 import Footer from './components/Footer'
 import '../src/styles/Subpage/Reward.css' // CSS tuỳ chỉnh cho trang ACB Rewards
-// JSX component converted from the provided HTML without changing layout or behavior.
-// Requires: Bootstrap 5 CSS + JS (bootstrap.bundle) and Bootstrap Icons CSS to be loaded globally.
+import Carousel from '../src/components/Homepage/Carousel'
+
 function Reward() {
   return (
     <>
     <Header />
+    <Carousel />
     <main>
       {/* Features / Benefits */}
       <section id="features" className="section">

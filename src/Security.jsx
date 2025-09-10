@@ -4,11 +4,14 @@ import React from 'react';
 import Header from './components/Header';   
 import Footer from './components/Footer';
 import './styles/Subpage/Security.css';
+import Carousel from '../src/components/Homepage/Carousel'
+
 
 function Security() {
   return (
     <>
     <Header />
+    <Carousel />
     <main>
       <div className="container my-5">{/* container: căn giữa + max-width theo breakpoint; my-5: margin-top & bottom = 3rem */}
 

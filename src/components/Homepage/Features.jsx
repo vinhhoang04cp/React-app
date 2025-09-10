@@ -22,7 +22,7 @@ export default function Features() {
               <a href="#" className="btn btn-primary rounded-pill px-4">Xem chi tiết</a>
             </div>
             <div className="col-lg-6 text-center text-lg-end mt-4 mt-lg-0">
-              <img src="./img/anh2k.jpg" className="img-fluid feature-img" alt="ACB ONE" loading="lazy" />
+              <img src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg" className="img-fluid feature-img" alt="ACB ONE" loading="lazy" />
             </div>
           </div>
         </div>
@@ -36,7 +36,7 @@ export default function Features() {
               <a href="#" className="btn btn-light rounded-pill px-4">Xem chi tiết</a>
             </div>
             <div className="col-lg-6 order-lg-1 text-center text-lg-start mt-4 mt-lg-0">
-              <img src="./img/anh2k.jpg" className="img-fluid feature-img" alt="Cards" loading="lazy" />
+              <img src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg" className="img-fluid feature-img" alt="Cards" loading="lazy" />
             </div>
           </div>
         </div>
@@ -50,7 +50,7 @@ export default function Features() {
               <a href="#" className="btn btn-light rounded-pill px-4">Xem chi tiết</a>
             </div>
             <div className="col-lg-6 text-center text-lg-end mt-4 mt-lg-0">
-              <img src="./img/anh2k.jpg" className="img-fluid feature-img" alt="Savings" loading="lazy" />
+              <img src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg" className="img-fluid feature-img" alt="Savings" loading="lazy" />
             </div>
           </div>
         </div>
@@ -64,7 +64,7 @@ export default function Features() {
               <a href="#" className="btn btn-primary rounded-pill px-4">Xem chi tiết</a>
             </div>
             <div className="col-lg-6 order-lg-1 text-center text-lg-start mt-4 mt-lg-0">
-              <img src="./img/anh2k.jpg" className="img-fluid feature-img" alt="AFDI" loading="lazy" />
+              <img src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-11.jpg" className="img-fluid feature-img" alt="AFDI" loading="lazy" />
             </div>
           </div>
         </div>
