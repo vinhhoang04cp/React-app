@@ -15,6 +15,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/common/Header.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// Import Bootstrap Icons CSS từ node_modules
+import 'bootstrap-icons/font/bootstrap-icons.css';
+// Import font file trực tiếp
+import 'bootstrap-icons/font/fonts/bootstrap-icons.woff';
+import 'bootstrap-icons/font/fonts/bootstrap-icons.woff2';
 
 const Header = () => {
   /**
@@ -89,6 +95,7 @@ const Header = () => {
   };
 
   return (
+    
     <header className="acb-header bg-white">
       {/*
         =========================

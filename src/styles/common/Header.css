@@ -1,4 +1,12 @@
 /* ACB Header - Light Theme */
+@import url("bootstrap-icons/font/bootstrap-icons.css");
+
+@font-face {
+  font-family: "bootstrap-icons";
+  src: url("../../node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2") format("woff2"),
+       url("../../node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff") format("woff");
+}
+
 :root {
   --acb-bg: #fff;
   --acb-bg-2: #fff;
@@ -8,6 +16,10 @@
   --acb-accent: #00a6e0;
   --acb-border: #e5e7eb;
   --wrap-max: 1280px;
+}
+
+.bi::before {
+  font-family: "bootstrap-icons" !important;
 }
 
 .acb-header.sticky-top {
