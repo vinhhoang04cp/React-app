@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import '../../styles/Carousel.css';
+import '../../styles/Homepage/Carousel.css';
 
 // Constants
 const CAROUSEL_ID = 'heroCarousel';

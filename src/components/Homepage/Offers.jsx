@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import '../../styles/Offers.css';
+import '../../styles/Homepage/Offers.css';
 
 // JSX chuyển từ đoạn HTML gốc, giữ nguyên chức năng & hiển thị.
 // Lưu ý:
