@@ -1,9 +1,13 @@
 import React from "react";
 import './styles/Subpage/Ebank.css';
+import Header from './components/Header.jsx';
+import Footer from './components/Footer.jsx';
 
 
 function Ebank() {
   return (
+    <>
+    <Header />
     <main>
       <section className="section" aria-labelledby="section-title">
         <div className="container">
@@ -426,6 +430,8 @@ function Ebank() {
       </section>
       {/* KẾT THÚC KẾT NỐI TÍCH HỢP HỆ THỐNG */}
     </main>
+    <Footer />
+    </>
   );
 }
 export default Ebank;
